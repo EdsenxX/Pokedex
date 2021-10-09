@@ -1,8 +1,6 @@
 <template>
   <v-container grid-list-md>
-    <div class="logo">
-      <img src="@/assets/img/pokemon.png" alt="Logo Pokemon" />
-    </div>
+    <logo />
     <div class="search">
       <input
         type="text"
@@ -35,10 +33,11 @@ import PokemonList from "../components/Pokemons/PokemonList";
 import api from "@/api";
 import PokemonCart from "@/components/Pokemons/PokemonCart";
 import Error from "@/components/global/Error";
+import Logo from "@/components/global/Logo";
 
 export default {
   name: "Home",
-  components: { PokemonList, PokemonCart, Error },
+  components: { PokemonList, PokemonCart, Error, Logo },
   data() {
     return {
       searchInput: "",
@@ -77,7 +76,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(["pokemons", "isLoading", 'next', 'previous']),
+    ...mapState(["pokemons", "isLoading", "next", "previous"]),
   },
   watch: {
     searchInput() {
@@ -85,25 +84,18 @@ export default {
         this.searchData = "";
       }
     },
-    showError(){
-      if(this.showError){
-        setTimeout(()=>{
-          this.closeError()
-        }, 50000)
+    showError() {
+      if (this.showError) {
+        setTimeout(() => {
+          this.closeError();
+        }, 50000);
       }
-    }
+    },
   },
 };
 </script>
 
 <style scoped>
-.logo {
-  display: flex;
-  justify-content: center;
-}
-.logo img {
-  width: 300px;
-}
 .search {
   width: 100%;
   margin-bottom: 20px;
