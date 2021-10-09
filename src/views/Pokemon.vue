@@ -1,7 +1,6 @@
 <template>
   <v-container class="container">
     <loader v-if="isLoading" />
-    <logo />
     <div class="options">
       <div class="option" @click="goBack">
         <box-icon name="arrow-back" color="white"></box-icon>
@@ -72,13 +71,12 @@
 
 <script>
 import api from "@/api";
-import Logo from "@/components/global/Logo";
 import Error from "@/components/global/Error";
 import Loader from "@/components/global/Loader";
 
 export default {
   name: "Pokemon",
-  components: { Logo, Error, Loader },
+  components: { Error, Loader },
   data() {
     return {
       pokemon: {},
@@ -151,6 +149,7 @@ export default {
 
 <style scoped>
 .container {
+  padding-top: 80px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;

@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="container">
     <div class="hero">
       <div class="hero__content">
         <img src="@/assets/img/perfil.jpg" alt="Eduardo Serrano" />
@@ -72,6 +72,9 @@
 </template>
 
 <style scoped lang="scss">
+.container{
+  padding-top: 90px;
+}
 .hero {
   width: 100%;
   height: 60vh;
@@ -137,9 +140,9 @@
     }
   }
   @media only screen and (max-width: 590px) {
-      .description{
-          padding: 10px 20px;
-      }
+    .description {
+      padding: 10px 20px;
+    }
     .contact {
       flex-direction: column;
       gap: 10px;

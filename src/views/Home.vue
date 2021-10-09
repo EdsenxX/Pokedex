@@ -2,7 +2,7 @@
   <div>
     <loader v-if="isLoading"/>
     <v-container grid-list-md v-else>
-      <logo />
+      <!-- <logo /> -->
       <div class="search">
         <input
           type="text"
@@ -36,12 +36,11 @@ import PokemonList from "../components/Pokemons/PokemonList";
 import api from "@/api";
 import PokemonCart from "@/components/Pokemons/PokemonCart";
 import Error from "@/components/global/Error";
-import Logo from "@/components/global/Logo";
 import Loader from "@/components/global/Loader";
 
 export default {
   name: "Home",
-  components: { PokemonList, PokemonCart, Error, Logo, Loader },
+  components: { PokemonList, PokemonCart, Error, Loader },
   data() {
     return {
       searchInput: "",
