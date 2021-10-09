@@ -1,28 +1,58 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+<!-- <template>
+  <div>
+    <h1>Contador</h1>
+    <p>{{ count }}</p>
+    <p>{{ getDouble }}</p>
+    <div>
+      <button @click="increment">+</button>
+      <br />
+      <button @click="decrement">-</button>
+    </div>
+    <br /><br />
+    <div>
+      <button @click="increment10">+10</button>
+      <button @click="incrementAsync">+Async</button>
+    </div>
   </div>
+</template> -->
+
+<template>
+  <router-view/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import { mapState, mapMutations, mapGetters } from "vuex";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+
+  // methods: {
+  //   ...mapMutations(["increment", "decrement"]),
+  //   increment10() {
+  //     this.$store.commit("increment", {
+  //       number: 10,
+  //     });
+  //   },
+  //   incrementAsync(){
+  //     this.$store.dispatch('incrementAsync', {
+  //       number: 3
+  //     }).then(()=>{
+  //       console.log('Action terminada')
+  //     })
+  //   }
+  // },
+
+  // computed: {
+  //   ...mapState(["count"]),
+  //   ...mapGetters(["getDouble"]),
+  // },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style >
+  body{
+    background: #1b1b1b;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+  }
 </style>
