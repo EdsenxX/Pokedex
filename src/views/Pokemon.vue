@@ -4,7 +4,7 @@
     <logo />
     <div class="options">
       <div class="option" @click="goBack">
-        <box-icon name="arrow-back"></box-icon>
+        <box-icon name="arrow-back" color="white"></box-icon>
       </div>
     </div>
     <error
@@ -159,13 +159,11 @@ export default {
 .options {
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .options .option {
   cursor: pointer;
   padding: 10px;
-  background: white;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -264,5 +262,22 @@ export default {
   height: 100%;
   background: #4671ee;
   border-radius: 5px;
+}
+@media only screen and (max-width: 920px){
+  .general, .stats{
+    width: 100%;
+  }
+  .pokemon{
+    flex-direction: column;
+  }
+  .pokemon .image{
+    width: 100%;
+  }
+  .pokemon .info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 </style>

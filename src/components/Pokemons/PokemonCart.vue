@@ -23,6 +23,9 @@ export default {
 </script>
 
 <style scoped>
+a{
+  text-decoration: none;
+}
 .pokemon {
   display: flex;
   flex-direction: column;
