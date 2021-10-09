@@ -12,11 +12,6 @@ const store = new Vuex.Store({
     next: null,
     previous: null,
   },
-  // getters: {
-  //   getDouble(state) {
-  //     return state.count * 2;
-  //   },
-  // },
   mutations: {
     setPokemons(state, payload) {
       state.isLoading = true;

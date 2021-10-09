@@ -1,16 +1,25 @@
 <template>
-  <div class="pokemon">
-        <img :src="p.sprites.front_default" :alt="p.name" />
-        <p class="title">{{ p.name | capitalize }}</p>
-        <p class="type">{{ p.types[0].type.name | capitalize }}</p>
-      </div>
+  <router-link
+    :to="{
+      name: 'pokemon',
+      params: {
+        id: p.name,
+      },
+    }"
+  >
+    <div class="pokemon">
+      <img :src="p.sprites.front_default" :alt="p.name" />
+      <p class="title">{{ p.name | capitalize }}</p>
+      <p class="type">{{ p.types[0].type.name | capitalize }}</p>
+    </div>
+  </router-link>
 </template>
 
 <script>
 export default {
-    name: "PokemonCart",
-    props: ['p']
-}
+  name: "PokemonCart",
+  props: ["p"],
+};
 </script>
 
 <style scoped>

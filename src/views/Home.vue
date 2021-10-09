@@ -1,30 +1,33 @@
 <template>
-  <v-container grid-list-md>
-    <logo />
-    <div class="search">
-      <input
-        type="text"
-        v-model="searchInput"
-        placeholder="Busca por nombre o por id..."
-      />
-      <div class="icon" @click="search">
-        <box-icon name="search" color="white"></box-icon>
+  <div>
+    <loader v-if="isLoading"/>
+    <v-container grid-list-md v-else>
+      <logo />
+      <div class="search">
+        <input
+          type="text"
+          v-model="searchInput"
+          placeholder="Busca por nombre o por id..."
+        />
+        <div class="icon" @click="search">
+          <box-icon name="search" color="white"></box-icon>
+        </div>
       </div>
-    </div>
-    <error
-      :msg="'No se encontro ningun resultado con esa busqueda'"
-      v-if="showError"
-      @close="closeError"
-    />
-    <pokemon-list v-if="!searchData" />
-    <pokemon-cart v-else :p="searchData" />
-    <div class="buttons" v-if="!searchData">
-      <button @click="getPrevius" v-if="previous">Pagina Anterior</button>
-      <button @click="getNext" v-if="next">
-        Página Siguiente
-      </button>
-    </div>
-  </v-container>
+      <error
+        :msg="'No se encontro ningun resultado con esa busqueda'"
+        v-if="showError"
+        @close="closeError"
+      />
+      <pokemon-list v-if="!searchData" />
+      <pokemon-cart v-else :p="searchData" />
+      <div class="buttons" v-if="!searchData">
+        <button @click="getPrevius" v-if="previous">Pagina Anterior</button>
+        <button @click="getNext" v-if="next">
+          Página Siguiente
+        </button>
+      </div>
+    </v-container>
+  </div>
 </template>
 
 <script>
@@ -34,10 +37,11 @@ import api from "@/api";
 import PokemonCart from "@/components/Pokemons/PokemonCart";
 import Error from "@/components/global/Error";
 import Logo from "@/components/global/Logo";
+import Loader from "@/components/global/Loader";
 
 export default {
   name: "Home",
-  components: { PokemonList, PokemonCart, Error, Logo },
+  components: { PokemonList, PokemonCart, Error, Logo, Loader },
   data() {
     return {
       searchInput: "",
