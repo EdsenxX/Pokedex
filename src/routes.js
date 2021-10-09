@@ -3,6 +3,7 @@ import Router from "vue-router";
 
 import Home from "@/views/Home";
 import Pokemon from "@/views/Pokemon"
+import About from "@/views/About"
 
 Vue.use(Router);
 
@@ -18,6 +19,11 @@ export default new Router({
       path: '/pokemon/:id',
       name: 'pokemon',
       component: Pokemon
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: About
     }
   ],
 });
